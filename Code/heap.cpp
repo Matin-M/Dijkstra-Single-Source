@@ -1,9 +1,7 @@
-#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
-#include<climits>
+#include <climits>
 #include "heap.h"
 
 using namespace std;

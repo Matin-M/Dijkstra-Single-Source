@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 #include "util.h"
 
 using namespace std;
