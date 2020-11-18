@@ -2,21 +2,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "util.h"
 
 using namespace std;
+using namespace util;
 
-namespace heap {
+class Heap {
 
-    class Heap {
     private:
-
-        //min-heap struct.
-        struct node {
-            int vertex;
-            int pred;
-            int distance;
-        };
-
         //Heap array.
         node *heapArr;
         //Capacity.
@@ -33,23 +26,17 @@ namespace heap {
         int right(int index) { return 2 * index + 2; }
         //Parent subnode
         int parent(int index) { return (index - 1) / 2; }
-        //Swap nodes.
-        void swap(node *x, node *y)
-        {
-            node temp = *x;
-            *x = *y;
-            *y = temp;
-        }
+
 
     public:
         //Default constructor.
         Heap();
 
         //Overloaded constructor.
-        Heap(int *vertexArray, int capacity);
+        Heap(node *vertexArray, int capacity);
 
         //Insert into min-heap.
-        void insert(int k);
+        void insert(node k);
 
         //Return min node.
         node minimum() { return heapArr[0]; }
@@ -58,8 +45,6 @@ namespace heap {
         node extractMin();
 
         //Decrease a key value for a node.
-        void decreaseKey(int i, int newVal);
+        void decreaseKey(int i, node newVal);
 
-
-    };
-}
+};
