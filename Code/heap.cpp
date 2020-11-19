@@ -92,7 +92,7 @@ void Heap::decreaseKey(int i, node newVal)
 }
 
 /**
- * Minheapify algorithm that maintains min-heap properties.
+ * Min-heapify algorithm that maintains min-heap properties.
  * @param v
  */
 void Heap::minHeapify(int v)

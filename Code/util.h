@@ -19,7 +19,7 @@ namespace util
         {
             vertex = -1;
             pred = -1;
-            distance = -1;
+            distance = INT_MAX;
         }
 
         //Min heap constructor.
@@ -28,6 +28,28 @@ namespace util
             vertex = vertexNode;
             pred = predNode;
             distance = distanceNode;
+        }
+    };
+
+    //Graph node struct.
+    struct graphNode
+    {
+        int id;
+        int weight;
+        struct graphNode* next;
+
+        graphNode()
+        {
+            id = -1;
+            weight = -1;
+            next = NULL;
+        }
+
+        graphNode(int newId, int newWeight, graphNode* nextNode)
+        {
+            id = newId;
+            weight = newWeight;
+            next = nextNode;
         }
 
     };
@@ -41,7 +63,7 @@ namespace util
     }
 
     //Swap nodes.
-    void swap(node *x, node *y)
+    static void swap(node *x, node *y)
     {
         node temp = *x;
         *x = *y;
