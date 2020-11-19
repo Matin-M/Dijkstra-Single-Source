@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdio.h>
+#include <climits>
 #include "util.h"
 
 using namespace std;
