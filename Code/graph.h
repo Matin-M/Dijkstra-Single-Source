@@ -25,4 +25,15 @@ class Graph
         //Initialize linkedLists.
         Graph(int newNumNodes, int newNumEdges);
 
+        //Insert element into graph given node.
+        void insertNode(graphNode* newNode, int pos);
+
+        //Insert element into graph given vertex, vertex, and weight.
+        void insertGraph(int u, int v, int w);
+
+        //Search graph for specific vertex at given position.
+        graphNode** returnNodesAtPos(int v);
+
+        //Return the number of nodes .
+        int returnNumNodesAtPos(int v);
 };

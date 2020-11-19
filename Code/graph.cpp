@@ -28,3 +28,67 @@ Graph::Graph(int newNumNodes, int newNumEdges)
     numEdges = newNumEdges;
     adjList = new graphNode*[numNodes];
 }
+
+/**
+ * Insert a new node into adj list at give position.
+ * @param newNode
+ * @param pos
+ */
+void Graph::insertNode(graphNode* newNode, int pos)
+{
+    if(adjList[pos] == NULL)
+    {
+        adjList[pos] = newNode;
+    }else{
+        newNode->next = adjList[pos];
+        adjList[pos] = newNode;
+    }
+}
+
+/**
+ * Insert a new edge from u to v with weight w.
+ * @param u
+ * @param v
+ * @param w
+ */
+void Graph::insertGraph(int u, int v, int w)
+{
+    graphNode* newGraphNode = new graphNode(u, v, w,NULL);
+    insertNode(newGraphNode, u);
+}
+
+/**
+ * Return the number of nodes at a vertex position.
+ * @param v
+ * @return
+ */
+int Graph::returnNumNodesAtPos(int u) {
+    graphNode* head = adjList[u];
+    int count = 0;
+    while(head != NULL)
+    {
+        count++;
+        head = head->next;
+    }
+}
+
+/**
+ * Return an array containing the nodes at vertex v.
+ * @param v
+ * @return
+ */
+graphNode** Graph::returnNodesAtPos(int u)
+{
+    graphNode** nodeArr;
+    int count = returnNumNodesAtPos(u);
+
+    nodeArr = new graphNode*[count];
+    graphNode* head = adjList[u];
+    for(int i = 0; i < count && head != NULL; i++)
+    {
+        nodeArr[i] = head;
+        head = head->next;
+    }
+
+    return nodeArr;
+}

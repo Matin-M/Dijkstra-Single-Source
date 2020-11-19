@@ -4,6 +4,9 @@
 #include <string.h>
 #include <climits>
 
+#ifndef UTIL_H
+#define UTIL_H
+
 using namespace std;
 
 namespace util
@@ -33,24 +36,27 @@ namespace util
     //Graph node struct.
     struct graphNode
     {
-        int id;
+        int originalVertex;
+        int vertex;
         int weight;
         struct graphNode* next;
 
+        //GraphNode default constructor.
         graphNode()
         {
-            id = -1;
+            originalVertex = -1;
+            vertex = -1;
             weight = -1;
             next = NULL;
         }
-
-        graphNode(int newId, int newWeight, graphNode* nextNode)
+        //GraphNode
+        graphNode(int originalVertexV, int newVertex, int newWeight, graphNode* nextNode)
         {
-            id = newId;
+            originalVertex = originalVertexV;
+            vertex = newVertex;
             weight = newWeight;
             next = nextNode;
         }
-
     };
 
     //Swap ints.
@@ -70,3 +76,5 @@ namespace util
     }
 
 }
+
+#endif
