@@ -63,7 +63,8 @@ void Graph::insertGraph(int u, int v, int w)
  * @return
  */
 int Graph::returnNumNodesAtPos(int u) {
-    graphNode* head = adjList[u];
+    //Subtract 1 from u to allow indexing of nodes starting from 1.
+    graphNode* head = adjList[u-1];
     int count = 0;
     while(head != NULL)
     {
@@ -83,7 +84,7 @@ graphNode** Graph::returnNodesAtPos(int u)
     int count = returnNumNodesAtPos(u);
 
     nodeArr = new graphNode*[count];
-    graphNode* head = adjList[u];
+    graphNode* head = adjList[u-1];
     for(int i = 0; i < count && head != NULL; i++)
     {
         nodeArr[i] = head;
