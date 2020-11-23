@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <climits>
-#include "graph.h";
+#include "graph.h"
 
 using namespace std;
 using namespace util;

@@ -3,24 +3,28 @@
 #include <stdlib.h>
 #include <string.h>
 #include <climits>
+#include "util.h"
 #include "graph.h"
 #include "heap.h"
-#include "main.h"
-#include "util.h"
 
 using namespace std;
 
-int Main::main() {
+//Objects
+Graph graph;
+Heap heap;
+
+int main() {
+
     //Parse text file.
     string input = "";
     getline(cin, input);
     //Obtain n and m;
     int spaceIndex = input.find(' ');
-    int n = stoi(input.substr(0,spaceIndex));
-    int m = stoi(input.substr(spaceIndex,input.length()-1));
+    int n = stoi(input.substr(0, spaceIndex));
+    int m = stoi(input.substr(spaceIndex,input.length() - 1));
 
     //Graph object that maintains graph.
-    Graph graph(n,m);
+    graph = Graph(n,m);
 
     //Store edges and vertecies into graph.
     int u;
@@ -32,12 +36,13 @@ int Main::main() {
         getline(cin, input);
         spaceIndex = input.find(' ');
         u = stoi(input.substr(0,spaceIndex));
-        v = stoi(input.substr(spaceIndex,input.length()-1));
-        spaceIndex = input.find(' ',4);
-        w = stoi(input.substr(spaceIndex,input.length()-1));
+        v = stoi(input.substr(spaceIndex,input.length() - 1));
+        spaceIndex = input.find(' ',spaceIndex + 1);
+        w = stoi(input.substr(spaceIndex,input.length() - 1));
         //Insert graphNode into graph.
-        graph.insertGraph(u,v,w);
+        graph.insertGraph(u, v, w);
     }
+
 
     return 0;
 }

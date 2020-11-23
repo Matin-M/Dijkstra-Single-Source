@@ -109,3 +109,16 @@ void Heap::minHeapify(int v)
         minHeapify(v);
     }
 }
+
+/**
+ * Init all nodes of heapArr.
+ * @param source
+ */
+void Heap::initSingleSource()
+{
+    for(int i = 0; i < capacity; i++)
+    {
+        heapArr[i].distance = INT_MAX;
+        heapArr[i].pred = -1;
+    }
+}

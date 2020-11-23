@@ -59,14 +59,6 @@ namespace util
         }
     };
 
-    //Swap ints.
-    static void swap(int *x, int *y)
-    {
-        int temp = *x;
-        *x = *y;
-        *y = temp;
-    }
-
     //Swap nodes.
     static void swap(node *x, node *y)
     {

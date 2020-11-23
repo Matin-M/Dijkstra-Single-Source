@@ -6,6 +6,9 @@
 using namespace std;
 using namespace util;
 
+#ifndef HEAP_H
+#define HEAP_H
+
 class Heap {
 
     private:
@@ -46,4 +49,9 @@ class Heap {
         //Decrease a key value for a node.
         void decreaseKey(int i, node newVal);
 
+        //Set distance to inf, and pred to -1 for each node.
+        void initSingleSource();
+
 };
+
+#endif

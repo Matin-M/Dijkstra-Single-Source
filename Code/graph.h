@@ -8,6 +8,9 @@
 using namespace std;
 using namespace util;
 
+#ifndef GRAPH_H
+#define GRAPH_H
+
 class Graph
 {
     private:
@@ -37,3 +40,5 @@ class Graph
         //Return the number of nodes .
         int returnNumNodesAtPos(int v);
 };
+
+#endif

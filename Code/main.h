@@ -9,4 +9,6 @@ using namespace std;
 class Main
 {
     int main();
+
+    void Dijkstra();
 };
