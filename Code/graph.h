@@ -22,7 +22,9 @@ class Graph
         int numEdges;
 
     public:
-        //Default constructor.
+
+
+    //Default constructor.
         Graph();
 
         //Initialize linkedLists.
@@ -39,6 +41,14 @@ class Graph
 
         //Return the number of nodes .
         int returnNumNodesAtPos(int v);
+
+        graphNode **getAdjList();
+
+        int getNumNodes();
+
+        int getNumEdges();
+
+
 };
 
 #endif

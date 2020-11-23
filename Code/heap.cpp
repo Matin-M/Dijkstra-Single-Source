@@ -122,3 +122,15 @@ void Heap::initSingleSource()
         heapArr[i].pred = -1;
     }
 }
+
+node *Heap::getHeapArr(){
+    return heapArr;
+}
+
+int Heap::getCapacity(){
+    return capacity;
+}
+
+int Heap::getHeapSize(){
+    return heapSize;
+}

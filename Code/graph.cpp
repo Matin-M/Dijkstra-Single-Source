@@ -71,6 +71,8 @@ int Graph::returnNumNodesAtPos(int u) {
         count++;
         head = head->next;
     }
+
+    return count;
 }
 
 /**
@@ -92,4 +94,16 @@ graphNode** Graph::returnNodesAtPos(int u)
     }
 
     return nodeArr;
+}
+
+graphNode **Graph::getAdjList(){
+    return adjList;
+}
+
+int Graph::getNumNodes() {
+    return numNodes;
+}
+
+int Graph::getNumEdges(){
+    return numEdges;
 }

@@ -52,6 +52,12 @@ class Heap {
         //Set distance to inf, and pred to -1 for each node.
         void initSingleSource();
 
+        node *getHeapArr();
+
+        int getCapacity();
+
+        int getHeapSize();
+
 };
 
 #endif
