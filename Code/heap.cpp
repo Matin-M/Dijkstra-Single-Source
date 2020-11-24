@@ -105,14 +105,19 @@ void Heap::minHeapify(int v)
 }
 
 /**
- * Init all nodes of heapArr.
- * @param source
+ * Search the heap.
+ * @param vertex
+ * @return
  */
-void Heap::initSingleSource()
+int Heap::searchHeap(int vertex)
 {
-    for(int i = 0; i < capacity; i++)
+    for(int i = 0; i < heapSize; i++)
     {
-        heapArr[i].distance = INT_MAX;
-        heapArr[i].pred = -1;
+        if(heapArr[i].vertex == vertex)
+        {
+            return i;
+        }
     }
+
+    return -1;
 }

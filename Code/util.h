@@ -16,6 +16,7 @@ namespace util
         int vertex;
         int pred;
         int distance;
+
         //Default constructor.
         node()
         {
