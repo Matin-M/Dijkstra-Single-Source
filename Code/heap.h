@@ -29,19 +29,15 @@ class Heap {
         //Parent subnode
         int parent(int index) { return (index - 1) / 2; }
 
-
     public:
         //Default constructor.
         Heap();
 
         //Overloaded constructor.
-        Heap(node *vertexArray, int capacity);
+        Heap(int heapCapacity);
 
         //Insert into min-heap.
         void insert(node k);
-
-        //Return min node.
-        node minimum() { return heapArr[0]; }
 
         //Extract min node.
         node extractMin();
@@ -52,11 +48,15 @@ class Heap {
         //Set distance to inf, and pred to -1 for each node.
         void initSingleSource();
 
-        node *getHeapArr();
+        //Return min node.
+        node minimum() { return heapArr[0]; }
 
-        int getCapacity();
+        //Getter methods.
+        node *getHeapArr() { return heapArr; }
 
-        int getHeapSize();
+        int getCapacity() { return capacity; }
+
+        int getHeapSize() { return heapSize; }
 
 };
 

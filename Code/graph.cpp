@@ -7,6 +7,7 @@
 using namespace std;
 using namespace util;
 
+
 /**
  * Default constructor.
  */
@@ -94,16 +95,4 @@ graphNode** Graph::returnNodesAtPos(int u)
     }
 
     return nodeArr;
-}
-
-graphNode **Graph::getAdjList(){
-    return adjList;
-}
-
-int Graph::getNumNodes() {
-    return numNodes;
-}
-
-int Graph::getNumEdges(){
-    return numEdges;
 }

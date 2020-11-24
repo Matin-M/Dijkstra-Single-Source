@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <climits>
 #include "heap.h"
 
@@ -13,20 +14,13 @@ Heap::Heap() {}
 
 /**
  * Primary constructor
- * @param vertexArray
  * @param heapCapacity
  */
-Heap::Heap(node *vertexArray, int heapCapacity)
+Heap::Heap(int heapCapacity)
 {
     capacity = heapCapacity;
     heapSize = 0;
     heapArr = new node[capacity];
-
-    //Populate heap with vertex elements.
-    for (int i = 0; i < heapCapacity; i++)
-    {
-        insert(vertexArray[i]);
-    }
 }
 
 /**
@@ -121,16 +115,4 @@ void Heap::initSingleSource()
         heapArr[i].distance = INT_MAX;
         heapArr[i].pred = -1;
     }
-}
-
-node *Heap::getHeapArr(){
-    return heapArr;
-}
-
-int Heap::getCapacity(){
-    return capacity;
-}
-
-int Heap::getHeapSize(){
-    return heapSize;
 }

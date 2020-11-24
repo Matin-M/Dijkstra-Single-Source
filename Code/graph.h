@@ -42,12 +42,11 @@ class Graph
         //Return the number of nodes .
         int returnNumNodesAtPos(int v);
 
-        graphNode **getAdjList();
+        graphNode **getAdjList() { return adjList; }
 
-        int getNumNodes();
+        int getNumNodes() { return numNodes; }
 
-        int getNumEdges();
-
+        int getNumEdges() { return numEdges; }
 
 };
 
