@@ -27,7 +27,7 @@ Graph::Graph(int newNumNodes, int newNumEdges)
 {
     numNodes = newNumNodes;
     numEdges = newNumEdges;
-    adjList = new graphNode*[numNodes];
+    adjList = new graphNode*[numNodes + 1];
 }
 
 /**
@@ -64,8 +64,7 @@ void Graph::insertGraph(int u, int v, int w)
  * @return
  */
 int Graph::returnNumNodesAtPos(int u) {
-    //Subtract 1 from u to allow indexing of nodes starting from 1.
-    graphNode* head = adjList[u-1];
+    graphNode* head = adjList[u];
     int count = 0;
     while(head != NULL)
     {
@@ -87,7 +86,7 @@ graphNode** Graph::returnNodesAtPos(int u)
     int count = returnNumNodesAtPos(u);
 
     nodeArr = new graphNode*[count];
-    graphNode* head = adjList[u-1];
+    graphNode* head = adjList[u];
     for(int i = 0; i < count && head != NULL; i++)
     {
         nodeArr[i] = head;

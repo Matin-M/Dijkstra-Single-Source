@@ -43,7 +43,7 @@ class Heap {
         node extractMin();
 
         //Decrease a key value for a node.
-        void decreaseKey(int i, node newVal);
+        void decreaseKey(int i, int newVal);
 
         //Search heap.
         int searchHeap(int vertex);

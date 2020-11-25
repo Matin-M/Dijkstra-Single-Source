@@ -74,10 +74,11 @@ node Heap::extractMin()
  * @param i
  * @param newVal
  */
-void Heap::decreaseKey(int i, node newVal)
+void Heap::decreaseKey(int i, int newVal)
 {
-    heapArr[i] = newVal;
-    while(i != 0 && heapArr[parent(i)].vertex > heapArr[i].vertex)
+    i = searchHeap(i);
+    heapArr[i].distance = newVal;
+    while(i != 0 && heapArr[parent(i)].distance > heapArr[i].distance)
     {
         swap(&heapArr[i], &heapArr[parent(i)]);
         i = parent(i);
@@ -99,8 +100,8 @@ void Heap::minHeapify(int v)
         min = rightNode;
     if (min != v)
     {
-        swap(&heapArr[v], &heapArr[v]);
-        minHeapify(v);
+        swap(&heapArr[v], &heapArr[min]);
+        minHeapify(min);
     }
 }
 
@@ -111,7 +112,7 @@ void Heap::minHeapify(int v)
  */
 int Heap::searchHeap(int vertex)
 {
-    for(int i = 0; i < heapSize; i++)
+    for(int i = 0; i < capacity; i++)
     {
         if(heapArr[i].vertex == vertex)
         {
